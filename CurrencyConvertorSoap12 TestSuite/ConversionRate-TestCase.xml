@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:testCase id="c6613535-260c-4745-bedd-2bb4efe5cbda" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="ConversionRate TestCase" searchProperties="true" xmlns:con="http://eviware.com/soapui/config"><con:settings><con:setting id="c6613535-260c-4745-bedd-2bb4efe5cbdafileName">ConversionRate-TestCase</con:setting></con:settings><con:testStep type="request" id="85151961-a614-4977-a5d6-2a9ea630b238" name="ConversionRate"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>CurrencyConvertorSoap12</con:interface><con:operation>ConversionRate</con:operation><con:request name="ConversionRate" id="bc9751d4-fe51-4073-aeb5-11cece9b0707" defaultOutgoingWss="" defaultIncomingWss=""><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://www.webservicex.net/CurrencyConvertor.asmx</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:web="http://www.webserviceX.NET/">
+   <soap:Header/>
+   <soap:Body>
+      <web:ConversionRate>
+         <web:FromCurrency>DZD</web:FromCurrency>
+         <web:ToCurrency>AUD</web:ToCurrency>
+      </web:ConversionRate>
+   </soap:Body>
+</soap:Envelope>]]></con:request><con:assertion type="GroovyScriptAssertion" id="a750ba62-6857-44c0-b2d7-ee492acda552" name="Script Assertion"><con:configuration><scriptText>def version = 1
+def version01  = 3
+def application = 2
+def application01 = 1
+
+if (version == version01 || application == application01){
+
+	assert 1==1
+}else
+{
+	assert 2==1
+}
+</scriptText></con:configuration></con:assertion><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:wsaConfig action="http://www.webserviceX.NET/CurrencyConvertorSoap/ConversionRateRequest" mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:testStep type="assertionteststep" name="Assertion" id="19ac3d74-f275-47a0-ae11-b0492d2f317c"><con:settings/><con:config xsi:type="con:AssertionTestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:entry><con:id>42785f14-a942-4178-98be-b62749300c70</con:id><con:isGroup>false</con:isGroup><con:sourceId>85151961-a614-4977-a5d6-2a9ea630b238</con:sourceId><con:propertyName>Response</con:propertyName><con:assertion type="GroovyScriptAssertion" name="Script Assertion" id="17bb4f36-d1f4-4efb-99e8-e90d2a9731fe"><con:configuration><scriptText>log.info "Jeshtha"</scriptText></con:configuration></con:assertion></con:entry></con:config></con:testStep><con:properties/><con:reportParameters/></con:testCase>
